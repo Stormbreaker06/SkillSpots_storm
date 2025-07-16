@@ -32,6 +32,9 @@ def list_workshops(db: Session, category: str = None, date: str = None, price: s
         q = q.filter(models.Workshop.price == 0)
     return q.all()
 
+def get_workshop_by_id(db: Session, workshop_id: int):
+    return db.query(models.Workshop).filter(models.Workshop.id == workshop_id).first()
+
 def book_workshop(db: Session, user_id: int, workshop_id: int):
     booking = models.Booking(user_id=user_id, workshop_id=workshop_id)
     db.add(booking)
