@@ -19,7 +19,7 @@ export default function Home() {
       if (filters.time) query.push(`date=${filters.time}`);
 
       const queryString = query.length > 0 ? `?${query.join("&")}` : "";
-      const res = await axios.get(`http://localhost:8000/workshops${queryString}`);
+      const res = await axios.get(`http://localhost:8000/workshops/${queryString}`);
       setWorkshops(res.data);
     } catch (error) {
       alert("Failed to fetch workshops");
