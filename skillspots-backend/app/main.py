@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Depends
 from sqlalchemy.orm import Session
-from . import models, database
+from app import models, database
 from .database import engine, get_db
 from .routes import users, auth, workshops, bookings
 
