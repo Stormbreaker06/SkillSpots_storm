@@ -11,7 +11,7 @@ export default function WorkshopDetails() {
 
   async function fetchWorkshop() {
     try {
-      const res = await axios.get(`http://localhost:8000/workshops/${id}`);
+      const res = await axios.get(`http://localhost:8000/workshops/${id}/`);
       setWorkshop(res.data);
     } catch (error) {
       alert("Failed to fetch workshop");
